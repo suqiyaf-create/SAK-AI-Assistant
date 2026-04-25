@@ -1,0 +1,21 @@
+{
+  "short_name": "SAK",
+  "name": "SAK - AI Assistant",
+  "icons": [
+    {
+      "src": "favicon-new.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "sak-logo-new.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0c4a6e",
+  "background_color": "#0c4a6e",
+  "description": "Your AI Assistant - Chat, generate images, and get help with anything."
+}
