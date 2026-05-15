@@ -1,0 +1,9 @@
+{
+  "name": "SAK AI",
+  "description": "A powerful, multi-modal AI assistant created by Suqiya, a final year ECT student.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": []
+}

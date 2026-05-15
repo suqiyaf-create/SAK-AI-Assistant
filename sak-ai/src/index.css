@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --animate-fade-up: fade-up 0.5s ease-out;
+  --animate-pulse-slow: pulse-slow 3s ease-in-out infinite;
+
+  @keyframes fade-up {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+  }
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.dark body {
+  background-color: #020617;
+  color: #f8fafc;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(14,165,233,0.2); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(14,165,233,0.4); }
+
+/* Markdown prose tweaks */
+.markdown { line-height: 1.7; }
+.markdown h1, .markdown h2, .markdown h3 { font-family: var(--font-heading); font-weight: 700; margin: 1.2em 0 0.6em; tracking: -0.02em; }
+.markdown h1 { font-size: 1.6rem; }
+.markdown h2 { font-size: 1.35rem; }
+.markdown h3 { font-size: 1.15rem; }
+.markdown p { margin: 0.8em 0; }
+.markdown ul, .markdown ol { padding-left: 1.5em; margin: 0.8em 0; }
+.markdown ul { list-style: disc; }
+.markdown ol { list-style: decimal; }
+.markdown li { margin: 0.4em 0; }
+.markdown code {
+  background: rgba(14,165,233,0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: #0284c7;
+}
+.dark .markdown code { color: #38bdf8; }
+.markdown pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 1.25rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin: 1rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.markdown pre code { background: transparent; padding: 0; color: inherit; }
+.markdown a { color: #0ea5e9; text-decoration: underline; text-underline-offset: 2px; }
+.markdown blockquote {
+  border-left: 4px solid #0ea5e9;
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: #475569;
+  margin: 1rem 0;
+}
+.dark .markdown blockquote { color: #94a3b8; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
